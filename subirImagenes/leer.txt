@@ -1,0 +1,36 @@
+Paos:
+
+Cargar y descarga de imagenes RETO 1
+--------------------------------------
+
+1. Crear un formulario para la carga de la imagen
+	con los campos: descripcion de tipo texto
+			imagen de tipo file
+	con el metodo post
+	en el action recibir.php
+	un metodo de incriptacion multipartes
+--------------------------------------------------
+
+2. Recibir el array con la información de la imagen
+
+3. Crear base de datos llamada base con una tabla llamada datos    con 3 campos
+   id autoincrement promary key
+   ruta varchar(150)
+   descripcion text puede ser null
+
+4. conectar a la base de datos.
+
+5. crear una carpeta en el servidor llamada imagenes
+6. almacenar los datos del array $Files en las variables
+	$rutaenServidor
+	$rutaTemporal
+	$nombreImagen
+	$rutaDestino
+7 usar el comando move_uploaded_file(origen, destino); para copiar la imagen al servidor en la carpeta imagenes
+8 contruier la cadena sql y guardar los datos
+9 informar al usuario si tuvo exito la operacion.
+
+	
+
+
+
