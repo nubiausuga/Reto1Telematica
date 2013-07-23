@@ -14,16 +14,20 @@ echo ' Ruta temporal de la imagen: ';
 print_r($_FILES['imagen'] ['tmp_name']);
 */
 
-$conexion=mysql_connect('localhost', 'nomUsuario', '123') or die ('No hay conexion a la base de datos');
-$db=mysql_select_db('based', $conexion) or die ('No existe la base de datos');
+include ("conexion.php");
+
+$login=$_POST["login"];
 
 $rutaEnServidor='imagenes';
 $rutaTemporal=$_FILES['imagen'] ['tmp_name'];
 $nombreImagen=($_FILES['imagen'] ['name']);
-$rutaDestino=$rutaEnServidor.'/'.$nombreImagen;
+$rutaDestino=$rutaEnServidor.'/'.$login.$nombreImagen;
 move_uploaded_file($rutaTemporal, $rutaDestino); // carga la imagen
 
 $desc=$_POST["descripcion"];
+
+
+
 
 $sql="INSERT INTO datos (ruta, descripcion) values('".$rutaDestino."', '".$desc."')" ;
 $res=mysql_query($sql,$conexion);

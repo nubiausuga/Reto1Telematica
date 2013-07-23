@@ -1,4 +1,4 @@
-Paos:
+Pasos:
 
 Cargar y descarga de imagenes RETO 1
 --------------------------------------
@@ -22,12 +22,12 @@ Cargar y descarga de imagenes RETO 1
 
 5. crear una carpeta en el servidor llamada imagenes
 6. almacenar los datos del array $Files en las variables
-	$rutaenServidor
+	$rutaEnServidor
 	$rutaTemporal
 	$nombreImagen
 	$rutaDestino
 7 usar el comando move_uploaded_file(origen, destino); para copiar la imagen al servidor en la carpeta imagenes
-8 contruier la cadena sql y guardar los datos
+8 contruier la cadena sql y guardar los datos en la bd
 9 informar al usuario si tuvo exito la operacion.
 
 	
