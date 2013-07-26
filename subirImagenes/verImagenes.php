@@ -7,7 +7,7 @@
 <!--
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #42413C;
+	background-color: #6699FF;
 	margin: 0;
 	padding: 0;
 	color: #000;
@@ -27,11 +27,11 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
 }
 /* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
 a:link {
-	color: #42413C;
+	color: #6699FF;
 	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
 }
 a:visited {
-	color: #6E6C64;
+	color: #6699FF;
 	text-decoration: underline;
 }
 a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
@@ -40,12 +40,12 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
 /* ~~ Este contenedor de anchura fija rodea a todas las demás bloques ~~ */
 .container {
 	width: 960px;
-	background-color: #FFFFFF;
+	background-color: #6699FF;
 	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño  */
 }
 /* ~~ No se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. ~~ */
 header {
-	background-color: #ADB96E;
+	background-color: #6699FF;
 }
 /* ~~ Estas son las columnas para el diseño. ~~ 
 
@@ -89,17 +89,17 @@ ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de qu
 	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
 	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
 	text-decoration: none;
-	background-color: #C6D580;
+	background-color: #6699FF;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
-	background-color: #ADB96E;
+	background-color: #6699FF;
 	color: #FFF;
 }
 
 /* ~~ El pie de página ~~ */
 footer {
 	padding: 10px 0;
-	background-color: #CCC49F;
+	background-color: #6699FF;
 	position: relative;/* esto da a IE6 el parámetro hasLayout para borrar correctamente */
 	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
 }
@@ -116,39 +116,52 @@ header, section, footer, aside, article, figure {
 <body>
 
 <div class="container">
-  <header></header>
-  <div class="sidebar1">
-    <ul class="nav">
-        <li><a href="mostrar.php">Ver todas</a><a href="categoria.html">Filtrar por categoria</a></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <aside>
-      <p><!-- end .sidebar1 --></p>
-    </aside>
-  </div>
+  <header>
+    <a href="#"><img src="sol.jpg" alt="Insertar logotipo aquí" width="304" height="164" id="Insert_logo" style="background-color: #6699FF; display:block;" /></a>
+  </header>
   <article class="content">
-    <h1> MOSTRAR IMAGEN</h1>
-    <section>
-     <h2>&nbsp;</h2>
-      <p>&nbsp;</p>
-    </section>
+     
+    <form id="form2" name="form2" method="post" action="muestracategoria.php"> 
+  <label for="categoria">
+   <br>
+   
+    <div align="center">Ver por categoria: </div>
+  </label>
+  <div align="center">
+    <select name="categoria" id="categoria">
+      <option>Animales</option>
+      <option>Vehiculos</option>
+      <option>Flores</option>
+      <option>Abstractos</option>
+      <option>Plantas</option>
+      <option>Personas</option>
+      <option>Cosas</option>
+      <option>Casas</option>
+    </select>
+    <input name="mostrar" type="submit" id="mostrar"  value="Mostrar">
+  </div>
+</form>
+    
+    </h1>
+    <h1><a href="index.html"><strong> <img src="atras.png" alt="Volver" width="101" height="61" style="background-color: #6699FF; display:block;" title="Volver" /></strong></a></strong> </h1>
     <section>
       <h2>&nbsp;</h2>
+      
+      <p><?php 
+include ("conexion.php");
+
+$consulta=mysql_query("select * from datos");
+while($filas=mysql_fetch_array($consulta)){
+$ruta=$filas['ruta'];
+$desc=$filas['descripcion'];
+
+?>
+<?php echo $desc; ?> 
+<img src="<?php echo $ruta;?>" width="272" height="186">
+<?php } ?></p>
+
     </section>
-    <section>
-      <h2>&nbsp;</h2>
-      <p>&nbsp;</p>
-    </section>
-    <section> </section>
-    <section> </section>
-    <section> </section>
-    <section> </section>
-    <section> </section>
-    <section>
-      <h2>&nbsp;</h2>
-    </section>
-  <!-- end .content --></article>
+  </article>
   <footer>
     <p>&nbsp;</p>
   </footer>

@@ -7,7 +7,7 @@
 <!--
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #42413C;
+	background-color: #6699FF;
 	margin: 0;
 	padding: 0;
 	color: #000;
@@ -31,7 +31,7 @@ a:link {
 	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
 }
 a:visited {
-	color: #6E6C64;
+	color: #6E6C61;
 	text-decoration: underline;
 }
 a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
@@ -40,12 +40,12 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
 /* ~~ Este contenedor de anchura fija rodea a todas las demás bloques ~~ */
 .container {
 	width: 960px;
-	background-color: #FFFFFF;
+	background-color: #6699FF;
 	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño  */
 }
 /* ~~ No se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. ~~ */
 header {
-	background-color: #ADB96E;
+	background-color: #6699FF;
 }
 /* ~~ Estas son las columnas para el diseño. ~~ 
 
@@ -61,7 +61,7 @@ header {
 .sidebar1 {
 	float: right;
 	width: 180px;
-	background-color: #EADCAE;
+	background-color: #6699FF;
 	padding-bottom: 10px;
 }
 .content {
@@ -89,17 +89,17 @@ ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de qu
 	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
 	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
 	text-decoration: none;
-	background-color: #C6D580;
+	background-color: #6699FF;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
-	background-color: #ADB96E;
+	background-color: #6699FF;
 	color: #FFF;
 }
 
 /* ~~ El pie de página ~~ */
 footer {
 	padding: 10px 0;
-	background-color: #CCC49F;
+	background-color: #6699FF;
 	position: relative;/* esto da a IE6 el parámetro hasLayout para borrar correctamente */
 	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
 }
@@ -107,6 +107,9 @@ footer {
 /*Compatibilidad con HTML5: define nuevas etiquetas HTML5 como display:block para que los navegadores sepan cómo procesar las etiquetas correctamente. */
 header, section, footer, aside, article, figure {
 	display: block;
+}
+a:active {
+	font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;
 }
 -->
 </style><!--[if lt IE 9]>
@@ -117,45 +120,28 @@ header, section, footer, aside, article, figure {
 
 <div class="container">
   <header>
-    <a href="#"><img src="principal.jpg" alt="Insertar logotipo aquí" width="471" height="254" id="Insert_logo" style="background-color: #C6D580; display:block;" /></a>
+    <a href="#"><img src="principal.jpg" alt="Insertar logotipo aquí" width="471" height="254" id="Insert_logo" style="background-color: # #6699FF; display: block;" /></a>
   </header>
   <div class="sidebar1">
     <ul class="nav">
-        <li><a href="filtrar.html">Ver imágenes</a><a href="cargar.html">Cargar Imagen</a></li>
+        <li><a href="verImagenes.php">Ver imagenes</a></li>
+        <LI><a href="login.html">Cargar Imagen</a></li>
         <li><a href="registrar.html">Crear Cuenta</a></li>
     </ul>
-    <aside>
-      <p>Por: Nubia Usuga<!-- end .sidebar1 --></p>
-    </aside>
   </div>
   <article class="content">
     <h1>Cargar y descargar imágenes</h1>
     <section>
-     <h2>Cómo utilizar esta página</h2>
-      <p>Esta página es util para subir y ver imágenes.</p>
-      <p>Para ver imagenes no requiere crear una cuenta de usuario. Puede elegir la categoria por la cual quiere buscar las imagenes</p>
+     <h2>Utilidad de esta página</h2>
+      <p>Esta página es útil para cargar imagénes y almacenarlas en un servidor, las cuales se pueden visualizar en cualquier momento. </p>
+      <p>Para ver imagenes no requiere crear una cuenta de usuario. </p>
+      <p>Puede elegir la categoría por la cual quiere visualizar  las imagenes</p>
       <p>Para cargar imágenes es necesario crear una cuenta de usuario</p>
-    </section>
-    <section>
-      <h2>Método de borrado</h2>
-      <p>Dado que todas las columnas son flotantes, este diseño usa una declaración clear:both en la regla footer.  Esta técnica de borrado fuerza a .container a conocer dónde terminan las columnas con el fin de mostrar cualquier borde o color de fondo que coloque en .container. Si su diseño exige la eliminación de .footer de .container, deberá usar un método de borrado diferente. Lo más fiable es añadir un &lt;br class=&quot;clearfloat&quot; /&gt; o &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; después de la última columna flotante (pero antes del cierre de .container). Esto proporcionará el mismo efecto de borrado. </p>
-    </section>
-    <section>
-      <h2>Sustitución de logotipo</h2>
-      <p>Se ha utilizado un marcador de posición de imagen en el header de este diseño, en el que lo más probable es que desee colocar un logotipo. Se recomienda quitar el marcador de posición y reemplazarlo por su propio logotipo vinculado. </p>
-      <p>Tenga en cuenta que si utiliza el inspector de propiedades para navegar hasta la imagen de su logotipo empleando el campo Origen (en lugar de quitar y reemplazar el marcador de posición), deberá quitar el fondo en línea y mostrar las propiedades. Estos estilos en línea sólo se utilizan para hacer que el marcador de posición del logotipo aparezca en los navegadores para fines de demostración. </p>
-      <p>Para quitar los estilos en línea, asegúrese de que el panel Estilos CSS está configurado como Actual. Seleccione la imagen y, en la sección Propiedades del panel Estilos CSS, haga clic con el botón derecho del ratón y elimine las propiedades de visualización y de fondo. (Por supuesto que siempre podrá ir directamente al código y eliminar allí los estilos en línea de la imagen o el marcador de posición.)</p>
-    </section>
-    <section>
-      <h2>&nbsp;</h2>
     </section>
   <!-- end .content --></article>
   <footer>
-    <p>Este footer contiene la declaración position:relative; para dar a Internet Explorer 6 hasLayout para footer y provocar que se borre correctamente. Si no es necesario proporcionar compatibilidad con IE6, puede quitarlo.</p>
-    <address>
-      Contenido de dirección
-    </address>
+    <p>Por: Nubia Usuga</p>
   </footer>
-  <!-- end .container --></div>
+<!-- end .container --></div>
 </body>
 </html>

@@ -16,17 +16,17 @@ print_r($_FILES['imagen'] ['tmp_name']);
 
 include ("conexion.php");
 
-$login=$_POST["login"];
+//$login=$_POST["login"];
+
+$inicial = substr(md5(uniqid(rand())),0,3); // coloca 3 letras al inicio del nombre de la imagen
 
 $rutaEnServidor='imagenes';
 $rutaTemporal=$_FILES['imagen'] ['tmp_name'];
 $nombreImagen=($_FILES['imagen'] ['name']);
-$rutaDestino=$rutaEnServidor.'/'.$login.$nombreImagen;
+$rutaDestino=$rutaEnServidor.'/'.$inicial.$nombreImagen;
 move_uploaded_file($rutaTemporal, $rutaDestino); // carga la imagen
 
 $desc=$_POST["descripcion"];
-
-
 
 
 $sql="INSERT INTO datos (ruta, descripcion) values('".$rutaDestino."', '".$desc."')" ;
