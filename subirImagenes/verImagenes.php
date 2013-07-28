@@ -143,7 +143,7 @@ header, section, footer, aside, article, figure {
 </form>
     
     </h1>
-    <h1><a href="index.html"><strong> <img src="atras.png" alt="Volver" width="101" height="61" style="background-color: #6699FF; display:block;" title="Volver" /></strong></a></strong> </h1>
+    <h1><a href="Index.html"><strong> <img src="atras.png" alt="Volver" width="101" height="61" style="background-color: #6699FF; display:block;" title="Volver" /></strong></a></strong> </h1>
     <section>
       <h2>&nbsp;</h2>
       
